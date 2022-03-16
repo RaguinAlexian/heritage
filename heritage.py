@@ -4,31 +4,37 @@ class Animal :
         self.__espece = espece
 
     def espece(self):
-        print(self.__espece)
+        return self.__espece
 
     def appelNom(self):
-        print(self.__name)
+        return self.__name
+
+    def comportement(self):
+        txt = "Chaque animal à son propre comportement"
+        return txt
     
 class Chat(Animal):
     def __init__(self, name):
-        Animal.__init__(self,name,"chat")
+        Animal.__init__(self,name,"Chat")
 
-    def etreChiant(self):
-        print("Un chat à de nombreuses manières de vous emmerder.")
+    def comportement(self):
+        text = "avec de nombreuses manières, vous emmerder."
+        return text
 
 class Ratel(Animal):
     def __init__(self, name):
         Animal.__init__(self,name, "Ratel")
         
-    def croqueCouille(self):
-        print("Oui oui, le Rattel se défend en arrachant les couilles avec sa gueule.")
+    def comportement(self):
+        text = "se défendre en arrachant les couilles avec sa gueule."
+        return text
         
-unChat = Chat("Silvestre")
-unRatel = Ratel("Une belle saloperie")
+choixAnimal = input("Quel animal voulez-vous prendre ? 1-Chat 2-Ratel (choisissez le chiffre) : ")
+if(choixAnimal == "1"):
+    choixNom = input("Veuillez insérer le nom de votre animal : ")
+    monAnimal = Chat(choixNom)
+else :
+    choixNom = input("Veuillez insérer le nom de votre animal : ")
+    monAnimal = Ratel(choixNom)
 
-unRatel.espece()
-unRatel.appelNom()
-unRatel.croqueCouille()
-unChat.espece()
-unChat.appelNom()
-unChat.etreChiant()
+print(monAnimal.appelNom() , "est un" , monAnimal.espece() , "et peut" , monAnimal.comportement())
