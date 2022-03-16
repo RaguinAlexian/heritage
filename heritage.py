@@ -23,7 +23,7 @@ class Chat(Animal):
 
 class Ratel(Animal):
     def __init__(self, name):
-        Animal.__init__(self,name, "Ratel")
+        Animal.__init__(self,name,"Ratel")
         
     def comportement(self):
         text = "se défendre en arrachant les couilles avec sa gueule."
@@ -38,3 +38,5 @@ else :
     monAnimal = Ratel(choixNom)
 
 print(monAnimal.appelNom() , "est un" , monAnimal.espece() , "et peut" , monAnimal.comportement())
+if(isinstance(monAnimal,Ratel)):
+    print(monAnimal.appelNom(),"semble particulièrement agressif, pensez à acheter des protèges tibia et une coque pour votre slip")
