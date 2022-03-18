@@ -28,6 +28,10 @@ class Ratel(Animal):
     def comportement(self):
         text = "se défendre en arrachant les couilles avec sa gueule."
         return text
+    
+    def comportementspe(self):
+        text = "votre animal semble particulièrement agressif et vous attaque de temps à autres, pensez à vous équiper de protège-tibias et d'une coque pour votre slip"
+        return text
         
 choixAnimal = input("Quel animal voulez-vous prendre ? 1-Chat 2-Ratel (choisissez le chiffre) : ")
 if(choixAnimal == "1"):
@@ -39,4 +43,4 @@ else :
 
 print(monAnimal.appelNom() , "est un" , monAnimal.espece() , "et peut" , monAnimal.comportement())
 if(isinstance(monAnimal,Ratel)):
-    print(monAnimal.appelNom(),"semble particulièrement agressif, pensez à acheter des protèges tibia et une coque pour votre slip")
+    print(monAnimal.appelNom(),monAnimal.comportementspe())
